@@ -1,40 +1,34 @@
 import React, { Component } from 'react';
 import Stories from 'react-insta-stories';
+import Sound from 'react-sound';
 
 import './App.css';
 
 export default () => {
   const stories = [
-    'images/1.jpg',
+    'images/1.png',
     {
-      content: (props) => (
-        <div style={{ background: 'pink', padding: 20 }}>
-          <h1 style={{ marginTop: '100%', marginBottom: 0 }}>🌝</h1>
-          <h1 style={{ marginTop: 5 }}>A custom title can go here.</h1>
-        </div>
-      ),
-    },
-    'images/2.jpg',
-    'images/3.jpg',
-    {
-      url: 'images/4.jpg',
-      header: {
-        heading: 'Heading',
-        subHeading: 'Sub Heading',
-      },
+      url: 'images/2.png',
       seeMore: () => {
         window.location.replace('https://goo.gl/maps/LSN98yg3uEXQZT278')
       },
     },
   ]
   return (
-    <Stories
-      id="stories"
-      stories={stories}
-      defaultInterval={5000}
-      width={432}
-      height="100vh"
-      loop={true}
-    />
+    <div>
+      <Sound
+        url="music.mp3"
+        autoLoad={true}
+        loop={true}
+      />
+      <Stories
+        id="stories"
+        stories={stories}
+        defaultInterval={5000}
+        width={432}
+        height="100vh"
+        loop={true}
+      />
+    </div>
   );
 };
