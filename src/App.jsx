@@ -15,6 +15,13 @@ export default function AppComponent() {
     {
       content: () => ParkingComponent(),
     },
+    {
+      content: () => (
+        <div style={{ margin: 20 }}>
+          <img src="images/chinchin_route.jpg" style={{ width: "100%" }} />
+        </div>
+      ),
+    },
   ];
 
   return (
@@ -25,7 +32,7 @@ export default function AppComponent() {
         defaultInterval={5000}
         width={432}
         height="100vh"
-        loop={false}
+        loop={true}
       />
     </div>
   );
